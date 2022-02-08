@@ -2,26 +2,31 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  OneToMany,
+  JoinColumn,
+  ManyToOne,
   PrimaryColumn,
 } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
-import { Coordinates } from "../../coordinates/entities/Coordinates";
+import { User } from "../../users/entities/User";
 
-@Entity("users")
-export class User {
+@Entity("coordinates")
+export class Coordinates {
   @PrimaryColumn()
   id?: string;
 
   @Column()
-  email: string;
+  longitude: number;
 
   @Column()
-  password: string;
+  latitude: number;
 
-  @OneToMany(() => Coordinates, (coordinates) => coordinates.user)
-  coordinates: Coordinates[];
+  @Column()
+  user_id: string;
+
+  @ManyToOne(() => User, (user) => user.coordinates)
+  @JoinColumn({ name: "user_id" })
+  user: User;
 
   @CreateDateColumn()
   created_at: Date;
