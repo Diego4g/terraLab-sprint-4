@@ -5,7 +5,7 @@ import { CreateCoordinatesUseCase } from "./CreateCoordinatesUseCase";
 
 export class CreateCoordinatesController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { latitude, longitude } = request.body;
+    const { latitude, longitude, description } = request.body;
 
     const { id: user_id } = request.params;
 
@@ -13,7 +13,12 @@ export class CreateCoordinatesController {
       CreateCoordinatesUseCase
     );
 
-    await createCoordinatesUseCase.execute({ latitude, longitude, user_id });
+    await createCoordinatesUseCase.execute({
+      latitude,
+      longitude,
+      description,
+      user_id,
+    });
 
     return response.status(201).send();
   }

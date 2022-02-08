@@ -15,11 +15,13 @@ export class CreateCoordinatesUseCase {
     user_id,
     latitude,
     longitude,
+    description,
   }: ICreateCoordinatesDTO): Promise<Coordinates> {
     const coordinate = await this.coordinatesRepository.create({
       user_id,
       latitude,
       longitude,
+      description,
     });
 
     return coordinate;

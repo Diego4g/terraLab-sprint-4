@@ -22,6 +22,9 @@ export class Coordinates {
   latitude: number;
 
   @Column()
+  description: string;
+
+  @Column()
   user_id: string;
 
   @ManyToOne(() => User, (user) => user.coordinates)

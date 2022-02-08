@@ -5,6 +5,7 @@ export interface ICoordinatesRepository {
   create({
     user_id,
     latitude,
+    description,
     longitude,
   }: ICreateCoordinatesDTO): Promise<Coordinates>;
 }

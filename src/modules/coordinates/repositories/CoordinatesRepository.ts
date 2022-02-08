@@ -13,16 +13,16 @@ export class CoordinatesRepository implements ICoordinatesRepository {
     user_id,
     latitude,
     longitude,
+    description,
   }: ICreateCoordinatesDTO): Promise<Coordinates> {
     const coordinate = this.repository.create({
       user_id,
       latitude,
       longitude,
+      description,
     });
 
     await this.repository.save(coordinate);
-
-    console.log("ok");
 
     return coordinate;
   }
