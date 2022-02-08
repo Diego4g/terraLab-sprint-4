@@ -13,8 +13,8 @@ describe("Create Coordinates", () => {
   });
   it("should be able to create a new coordinates", async () => {
     const coordinates = await createCoordinatesUseCase.execute({
-      latitude: 332,
-      longitude: 684,
+      latitude: 332.454521,
+      longitude: 684.515415145,
       description: "teste",
       user_id: "1234",
     });
