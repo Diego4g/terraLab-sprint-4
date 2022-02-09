@@ -8,7 +8,7 @@ export class CreateCoordinatesController {
     const { description } = request.body;
     const { latitude, longitude } = request.query;
 
-    const { id: user_id } = request.params;
+    const { id: user_id } = request.user;
 
     const createCoordinatesUseCase = container.resolve(
       CreateCoordinatesUseCase

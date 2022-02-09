@@ -8,6 +8,6 @@ const router = Router();
 
 router.use("/users", usersRouter);
 router.use("/login", authenticationRouter);
-router.use("/coordinates/:id", coordinatesRoutes);
+router.use("/coordinates", coordinatesRoutes);
 
 export { router };
