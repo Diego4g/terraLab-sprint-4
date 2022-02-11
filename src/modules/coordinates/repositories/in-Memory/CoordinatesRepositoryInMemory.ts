@@ -22,7 +22,10 @@ export class CoordinatesRepositoryInMemory implements ICoordinatesRepository {
   }
 
   async deleteById(coordinates_id: string): Promise<void> {
-    this.coordinates.filter((coord) => coord.id !== coordinates_id);
+    const index = this.coordinates.findIndex(
+      (coord) => coord.id === coordinates_id
+    );
+    this.coordinates.splice(index, 1);
   }
 
   async findByUser(user_id: string): Promise<Coordinates[]> {
