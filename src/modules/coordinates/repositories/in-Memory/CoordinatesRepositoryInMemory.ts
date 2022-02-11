@@ -24,4 +24,8 @@ export class CoordinatesRepositoryInMemory implements ICoordinatesRepository {
   async deleteById(coordinates_id: string): Promise<void> {
     this.coordinates.filter((coord) => coord.id !== coordinates_id);
   }
+
+  findByUser(user_id: string): Promise<Coordinates[]> {
+    throw new Error("Method not implemented.");
+  }
 }

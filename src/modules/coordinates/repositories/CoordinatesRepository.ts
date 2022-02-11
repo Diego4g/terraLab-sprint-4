@@ -31,4 +31,13 @@ export class CoordinatesRepository implements ICoordinatesRepository {
   async deleteById(coordinates_id: string): Promise<void> {
     await this.repository.delete(coordinates_id);
   }
+
+  async findByUser(user_id: string): Promise<Coordinates[]> {
+    const coordinates = await this.repository.find({
+      where: { user_id },
+      relations: ["user"],
+    });
+
+    return coordinates;
+  }
 }
