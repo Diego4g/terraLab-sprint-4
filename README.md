@@ -35,9 +35,9 @@ Rota responsável por fazer o login na plataforma. Para isso deve ser informado 
 
 Rota responsável por fazer o cadastro de novas coordenadas, para isso deve ser necessário fornecer os seguintes dados como ilustrado abaixo:
 
-```json
+```js
 {
-	"description": "descrição da coordenada", // passada pelo body
+  "description": "descrição da coordenada", // passada pelo body
   "latitude": 123.123,                      // passado pelo query
   "longitude": 321.321,                     // passado pelo query
 }
@@ -50,9 +50,9 @@ Rota responsável por fazer o cadastro de novas coordenadas, para isso deve ser 
 
 Rota responsável por alterar as informações de uma coordedada.
 
-```json
+```js
 {
-	"description": "alterando coordenada",    // passada pelo body
+  "description": "alterando coordenada",    // passada pelo body
   "latitude": 123.123,                      // passado pelo body
   "longitude": 321.321,                     // passado pelo body
 }
