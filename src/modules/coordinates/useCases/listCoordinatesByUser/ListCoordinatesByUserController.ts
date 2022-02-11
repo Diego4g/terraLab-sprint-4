@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 
+import { CoordinatesMap } from "../../mappers/CoordinatesMap";
 import { ListCoordinatesByUserUseCase } from "./ListCoordinatesByUserUseCase";
 
 export class ListCoordinatesByUserController {
@@ -12,6 +13,10 @@ export class ListCoordinatesByUserController {
 
     const coordinates = await listCoordinatesByUserUseCase.execute(user_id);
 
-    return response.json(coordinates);
+    const coordinatesMap = coordinates.map((coordinate) =>
+      CoordinatesMap.toDTO(coordinate)
+    );
+
+    return response.json(coordinatesMap);
   }
 }
