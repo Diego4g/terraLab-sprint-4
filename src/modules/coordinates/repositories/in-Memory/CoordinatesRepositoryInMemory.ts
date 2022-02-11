@@ -32,4 +32,8 @@ export class CoordinatesRepositoryInMemory implements ICoordinatesRepository {
 
     return coordenadas;
   }
+
+  findById(coordinates_id: string): Promise<Coordinates> {
+    throw new Error("Method not implemented.");
+  }
 }

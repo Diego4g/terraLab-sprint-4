@@ -40,4 +40,21 @@ export class CoordinatesRepository implements ICoordinatesRepository {
 
     return coordinates;
   }
+  async updateById(
+    coordinates_id: string,
+    latitude: number,
+    longitude: number,
+    description: string
+  ): Promise<void> {
+    await this.repository.update(coordinates_id, {
+      latitude,
+      longitude,
+      description,
+    });
+  }
+  async findById(coordinates_id: string): Promise<Coordinates> {
+    const coordinate = await this.repository.findOne(coordinates_id);
+
+    return coordinate;
+  }
 }
