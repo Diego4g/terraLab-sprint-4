@@ -33,7 +33,26 @@ export class CoordinatesRepositoryInMemory implements ICoordinatesRepository {
     return coordenadas;
   }
 
-  findById(coordinates_id: string): Promise<Coordinates> {
-    throw new Error("Method not implemented.");
+  async findById(coordinates_id: string): Promise<Coordinates> {
+    const coordinate = this.coordinates.find(
+      (coord) => coord.id === coordinates_id
+    );
+
+    return coordinate;
+  }
+
+  async updateById(
+    coordinates_id: string,
+    latitude: number,
+    longitude: number,
+    description: string
+  ): Promise<void> {
+    const coordinate = this.coordinates.find(
+      (coord) => coord.id === coordinates_id
+    );
+
+    coordinate.latitude = latitude;
+    coordinate.longitude = longitude;
+    coordinate.description = description;
   }
 }
