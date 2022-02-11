@@ -25,7 +25,11 @@ export class CoordinatesRepositoryInMemory implements ICoordinatesRepository {
     this.coordinates.filter((coord) => coord.id !== coordinates_id);
   }
 
-  findByUser(user_id: string): Promise<Coordinates[]> {
-    throw new Error("Method not implemented.");
+  async findByUser(user_id: string): Promise<Coordinates[]> {
+    const coordenadas = this.coordinates.filter(
+      (coord) => coord.user_id === user_id
+    );
+
+    return coordenadas;
   }
 }
