@@ -30,8 +30,6 @@ describe("Update a coordinates", () => {
       latitude: 111,
     });
 
-    console.log(coordinate);
-
     expect(coordinate.latitude).toEqual(111);
   });
 });
