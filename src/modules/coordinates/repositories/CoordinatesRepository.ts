@@ -9,6 +9,7 @@ export class CoordinatesRepository implements ICoordinatesRepository {
   constructor() {
     this.repository = getRepository(Coordinates);
   }
+
   async create({
     user_id,
     latitude,
@@ -25,5 +26,9 @@ export class CoordinatesRepository implements ICoordinatesRepository {
     await this.repository.save(coordinate);
 
     return coordinate;
+  }
+
+  async deleteById(coordinates_id: string): Promise<void> {
+    await this.repository.delete(coordinates_id);
   }
 }

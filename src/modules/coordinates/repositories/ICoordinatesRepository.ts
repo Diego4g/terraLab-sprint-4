@@ -8,4 +8,5 @@ export interface ICoordinatesRepository {
     description,
     longitude,
   }: ICreateCoordinatesDTO): Promise<Coordinates>;
+  deleteById(coordinates_id: string): Promise<void>;
 }

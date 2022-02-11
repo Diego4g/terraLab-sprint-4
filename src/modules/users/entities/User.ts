@@ -20,6 +20,9 @@ export class User {
   @Column()
   password: string;
 
+  @Column()
+  isAdmin: boolean;
+
   @OneToMany(() => Coordinates, (coordinates) => coordinates.user)
   coordinates: Coordinates[];
 
