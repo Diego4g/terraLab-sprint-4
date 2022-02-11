@@ -46,7 +46,7 @@ Rota responsável por fazer o cadastro de novas coordenadas, para isso deve ser 
 **Para acessar esta rota o usuário deve estar logado no sistema**
 
 
-## PUT `/cordinates/:id`
+### PUT `/cordinates/:id`
 
 Rota responsável por alterar as informações de uma coordedada.
 
@@ -59,14 +59,14 @@ Rota responsável por alterar as informações de uma coordedada.
 ```
 **Para acessar esta rota o usuário deve estar logado no sistema**
 
-## GET `/coordinates`
+### GET `/coordinates`
 
 Lista todos os pontos cadastrados por um determinado usuário.
 
 **Para acessar esta rota o usuário deve estar logado no sistema**
 
 
-## DELETE `/coordinates/:id`
+### DELETE `/coordinates/:id`
 
 Rota responsável por excluir uma coordenada.
 
