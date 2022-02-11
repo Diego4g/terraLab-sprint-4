@@ -20,4 +20,8 @@ export class CoordinatesRepositoryInMemory implements ICoordinatesRepository {
     this.coordinates.push(coordinates);
     return coordinates;
   }
+
+  async deleteById(coordinates_id: string): Promise<void> {
+    this.coordinates.filter((coord) => coord.id !== coordinates_id);
+  }
 }
